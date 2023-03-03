@@ -1,0 +1,59 @@
+.accordion-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: green  ;
+
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.accordion-list > li.accordion {
+    margin: 1rem;
+    background-color: yellowgreen;
+    position: relative;
+}
+
+.accordion-list > li.accordion > .title {
+    background-color: hotpink;
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.accordion-list > li.accordion > .title::before {
+    content: '+';
+    color: black;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+.accordion-list > li.accordion.active > .title::before {
+    content: '-';
+}
+
+.accordion-list > li.accordion > .content {
+    background-color: blue;
+    position: relative;
+    height: 0;
+    text-align: justify;
+    overflow: hidden;
+    padding: 0;
+}
+
+li.accordion.active .content {
+    height: auto;
+    padding: 0.5rem;
+    transition: height 0.5s linear;
+}
+
+.accordion-list > li.accordion::before,
+.accordion-list > li.accordion::after {
+    width: 100%;
+    margin-left: 0;
+    border: 10px solid grey;
+}

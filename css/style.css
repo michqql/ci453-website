@@ -1,0 +1,128 @@
+/* Stylesheet should focus on smaller viewports first and then use media queries to target desktop screens */
+
+/* Imports JetBrains font from Google Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+/* Styles the body of the webpage */
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  margin: 0;
+}
+
+/* Styles the navigation bar */
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ccc;
+}
+nav li {
+  float: left;
+  margin: 2px;
+}
+nav li a {
+  display: block;
+  color: #111;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+nav li a:hover {
+  background-color: #111;
+  color: white;
+}
+
+/* Styles the header element */
+
+header {
+  background-color: blue;
+}
+
+/* Styles each article element */
+
+article {
+  margin: 0.5rem 0.2rem 0.5rem 0.2rem;
+  padding: 0.5rem;
+  background-color: blueviolet;
+}
+
+/* Sets a media query for screens with a minimum width of 60rem */
+
+@media (min-width: 60rem) {
+  /* main {
+    min-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: hotpink;
+  } */
+  /* .column-middle {
+    min-width: 1000px;
+    background-color: hotpink;
+  } */
+}
+
+h1 {
+  color: hotpink;
+}
+
+/* Styles the columns */
+
+.column-middle {
+  float: left;
+  width: 80%;
+  background-color: yellow;
+}
+
+.column-left,
+.column-right {
+  float: left;
+  width: 10%;
+  height: 500px;
+  background-color: red;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Styles for article card elements */
+
+.article-card {
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  background-color: green;
+}
+
+/* Styles for article elements inside cards */
+
+.article-card article {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.article-card h3 {
+  margin-top: 0;
+}
+
+/* Creates a grid container for the cards */
+
+.article-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Set the large article cards to span two rows */
+
+.large {
+  grid-row: span 2;
+}

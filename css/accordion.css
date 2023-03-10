@@ -1,4 +1,11 @@
-.accordion-list {
+/* 
+    Style sheet to style accordions 
+    Accordions can be clicked on and they expand to display more information to the user
+    They are often used in FAQ sections of websites
+*/
+
+/* The parent of all accordions that you may want listed */
+ul.accordion-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -10,11 +17,13 @@
 
 }
 
+/* The accordion list item that contains the divs for the title and content of the accordion */
 .accordion-list > li.accordion {
     margin: 1rem;
     position: relative;
 }
 
+/* The title div */
 .accordion-list > li.accordion > .title {
     background-color: #69c;
     position: relative;
@@ -23,13 +32,12 @@
 
     border-radius: 5px;
     transition: border-radius 0.25s;
+
+    /* Stop users from highlighting the text when clicking on the title */
+    user-select: none;
+    -webkit-user-select: none; /* Required to disable selecting on Safari browsers */
 }
-.accordion-list > li.accordion.active > .title {
-    border-radius: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: border-radius 0.25s;
-}
+/* Adds a + symbol on the right side of the accordion to let the user know it can be expanded */
 .accordion-list > li.accordion > .title::before {
     content: '+';
     color: black;
@@ -39,10 +47,19 @@
     right: 5px;
     transform: translateY(-50%);
 }
+/* Styling for the title div when the accordion is active */
+.accordion-list > li.accordion.active > .title {
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: border-radius 0.25s;
+}
+/* Changes the + symbol to a - symbol to let the user know it can be closed */
 .accordion-list > li.accordion.active > .title::before {
     content: '-';
 }
 
+/* The content div of the accordion, where the information text goes */
 .accordion-list > li.accordion > .content {
     background-color: rgb(154, 195, 236);
     position: relative;
@@ -55,8 +72,8 @@
     transition: visibility 0.1s, max-height 0.1s, padding 0.1s;
     overflow: hidden;
 }
-
-li.accordion.active .content {
+/* Styling the content div when the accordion is active */
+.accordion-list > li.accordion.active > .content {
     visibility: visible;
     max-height: 200px;
     padding: 0.5rem;
@@ -65,6 +82,7 @@ li.accordion.active .content {
     border-bottom-right-radius: 10px;
 }
 
+/* Adds a line in between each accordion, only when there are multiple accordion elements next to each other */
 .accordion-list > li.accordion + li.accordion {
     border-top: 1px solid #aaa;
     padding-top: 1rem;

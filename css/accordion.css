@@ -30,7 +30,7 @@ ul.accordion-list {
     cursor: pointer;
     padding: 0.5rem;
 
-    border-radius: 5px;
+    border-radius: 10px;
     transition: border-radius 0.25s;
 
     /* Stop users from highlighting the text when clicking on the title */
@@ -49,9 +49,8 @@ ul.accordion-list {
 }
 /* Styling for the title div when the accordion is active */
 .accordion-list > li.accordion.active > .title {
-    border-radius: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     transition: border-radius 0.25s;
 }
 /* Changes the + symbol to a - symbol to let the user know it can be closed */
@@ -63,24 +62,24 @@ ul.accordion-list {
 .accordion-list > li.accordion > .content {
     background-color: rgb(154, 195, 236);
     position: relative;
-    text-align: justify;
     overflow: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 
     visibility: hidden;
     max-height: 0;
     padding: 0 0.5rem 0 0.5rem;
     transition: visibility 0.1s, max-height 0.1s, padding 0.1s;
-    overflow: hidden;
 }
 /* Styling the content div when the accordion is active */
+
 .accordion-list > li.accordion.active > .content {
     visibility: visible;
     max-height: 200px;
     padding: 0.5rem;
     transition: visibility 0.25s, max-height 0.25s, padding 0.25s;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
+
 
 /* Adds a line in between each accordion, only when there are multiple accordion elements next to each other */
 .accordion-list > li.accordion + li.accordion {

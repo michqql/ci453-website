@@ -12,6 +12,7 @@ for(let i = 0; i < accordions.length; i++) {
     // when a different accordion is made active
     let singleActiveBool = parent.classList.contains('single-active');
 
+    // get the title div and add click event listener to that
     currentAccordion.addEventListener('click', function() {
         // if single active class is applied to the parent,
         // all other accordions should become inactive before this one is made active
